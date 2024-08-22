@@ -1,0 +1,22 @@
+version: 1
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        formatter: lineFormatter
+        level: DEBUG
+    richconsole:
+        class: rich.logging.RichHandler
+        formatter: lineFormatter
+        level: DEBUG
+
+root:
+    level: DEBUG
+    handlers:
+        - richconsole
+
+formatters:
+    lineFormatter:
+        format: "%(asctime)s:%(levelname)s:%(name)s:%(funcName)s %(message)s"
+
+disable_existing_loggers: true
